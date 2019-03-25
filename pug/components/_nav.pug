@@ -1,7 +1,8 @@
-aside.sidebar
+aside.col-3.sidebar
   h1.logo
     a.logo__link(href="#")
-      span.logo__icon
+      span
+        i.logo__icon.fas.fa-leaf
   button.sidebar__toggle-button
     span Toggle
   .sidebar__collapse
@@ -11,7 +12,7 @@ aside.sidebar
         placeholder="Search"
         )
       button.search__btn(type="submit")
-        span.search__btn-icon
+        i.search__btn-icon.fas.fa-search
     nav.navbar
       .dashboards
         -
@@ -19,6 +20,7 @@ aside.sidebar
             {
               name  : "Overview",
               url : "#",
+              active : true
             },
             {
               name  : "Order history",
@@ -37,24 +39,27 @@ aside.sidebar
         ul.dashboards__list
           each val in dashboardList
             li.dashboards__item
-              a.dashboards__link(href= val.url)= val.name
+              a.dashboards__link(
+                href= val.url
+                class= val.active ? "active" : ""
+              )= val.name
       .more-document
         -
           moreDocumentList = [
             {
-              name  : "Overview",
+              name  : "Toolkit docs",
               url : "#",
             },
             {
-              name  : "Order history",
+              name  : "Bootstrap docs",
               url : "#",
             },
             {
-              name  : "Fluid layout",
+              name  : "Light UI",
               url : "#",
             },
             {
-              name  : "Icon nav",
+              name  : "Example modal",
               url : "#",
             }
           ]

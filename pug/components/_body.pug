@@ -1,45 +1,46 @@
 .container
-  include _nav.pug
-  .main-content
-    section.overview
-      .overview__header
-        .overview__title
-          h6.overview__sub-title Dashboards
-          h2.overview__main-title Overview
-        .datetime-picker
-          span.datetime-picker__icon
-          input.datetime-picker__input(
-            type="text"
-            placeholder="03/19/2019"
-            )
-      .overview__charts
-        .row
-          -
-            var chartList = [
-              {
-                chartName  : "chart",
-                content : "Traffic",
-                title : "New vs Returning"
-              },
-              {
-                chartName  : "chart",
-                content : "Revenue",
-                title : "New vs Recurring"
-              },
-              {
-                chartName  : "chart",
-                content : "Traffic",
-                title : "Direct vs Referrals"
-              }
-            ]
-          each val in chartList
-            .col-4.doughnut
-              canvas(
-                class= val.chartName
+  .row
+    include _nav.pug
+    .col-9.main-content
+      section.overview
+        .overview__header
+          .overview__title
+            h6.overview__sub-title Dashboards
+            h2.overview__main-title Overview
+          .datetime-picker
+            i.datetime-picker__icon.fas.fa-calendar-week
+            input.datetime-picker__input.js-datetime-picker__input(
+              type="text"
+              placeholder="03/19/2019"
               )
-              .doughnut__content= val.content
-              h3.doughnut__title= val.title
-    section.quick-stats
+        .overview__charts
+          .row
+            -
+              var chartList = [
+                {
+                  chartName  : "chart",
+                  content : "Traffic",
+                  title : "New vs Returning"
+                },
+                {
+                  chartName  : "chart",
+                  content : "Revenue",
+                  title : "New vs Recurring"
+                },
+                {
+                  chartName  : "chart",
+                  content : "Traffic",
+                  title : "Direct vs Referrals"
+                }
+              ]
+            each val in chartList
+              .col-4.doughnut
+                canvas(
+                  class= val.chartName
+                )
+                .doughnut__content= val.content
+                h3.doughnut__title= val.title
+      section.quick-stats
     
 
 
