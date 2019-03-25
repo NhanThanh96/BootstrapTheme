@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Overview &middot; Dashboard theme &middot; Official Bootstrap Themes</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  <link rel="stylesheet" href="./fonts/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h1 class="logo"><a class="logo__link" href="#"><span class="logo__icon"></span></a></h1><button
+        class="sidebar__toggle-button"><span>Toggle</span></button>
+      <div class="sidebar__collapse">
+        <form class="search" action="#"><input class="search__input" type="text" placeholder="Search" /><button
+            class="search__btn" type="submit"><span class="search__btn-icon"></span></button></form>
+        <nav class="navbar">
+          <div class="dashboards">
+            <h3 class="dashboards__title">dashboard</h3>
+            <ul class="dashboards__list">
+              <li class="dashboards__item"><a class="dashboards__link" href="#">Overview</a></li>
+              <li class="dashboards__item"><a class="dashboards__link" href="#">Order history</a></li>
+              <li class="dashboards__item"><a class="dashboards__link" href="#">Fluid layout</a></li>
+              <li class="dashboards__item"><a class="dashboards__link" href="#">Icon nav</a></li>
+            </ul>
+          </div>
+          <div class="more-document">
+            <h3 class="more-document__title">More</h3>
+            <ul class="more-document__list">
+              <li class="dashboards__item"><a class="dashboards__link" href="#">Overview</a></li>
+              <li class="dashboards__item"><a class="dashboards__link" href="#">Order history</a></li>
+              <li class="dashboards__item"><a class="dashboards__link" href="#">Fluid layout</a></li>
+              <li class="dashboards__item"><a class="dashboards__link" href="#">Icon nav</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </aside>
+    <div class="main-content">
+      <section class="overview">
+        <div class="overview__header">
+          <div class="overview__title">
+            <h6 class="overview__sub-title">Dashboards</h6>
+            <h2 class="overview__main-title">Overview</h2>
+          </div>
+          <div class="datetime-picker"><span class="datetime-picker__icon"></span><input class="datetime-picker__input"
+              type="text" placeholder="03/19/2019" /></div>
+        </div>
+        <div class="overview__charts">
+          <div class="row">
+            <div class="col-4 doughnut"><canvas class="chart"></canvas>
+              <div class="doughnut__content">Traffic</div>
+              <h3 class="doughnut__title">New vs Returning</h3>
+            </div>
+            <div class="col-4 doughnut"><canvas class="chart"></canvas>
+              <div class="doughnut__content">Revenue</div>
+              <h3 class="doughnut__title">New vs Recurring</h3>
+            </div>
+            <div class="col-4 doughnut"><canvas class="chart"></canvas>
+              <div class="doughnut__content">Traffic</div>
+              <h3 class="doughnut__title">Direct vs Referrals</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="quick-stats"></section>
+    </div>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</body>
+
+</html>
