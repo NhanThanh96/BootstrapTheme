@@ -1,172 +1,416 @@
 .container {
-    padding-top: 50px; 
-    margin: 0 auto;
+  padding-top: 50px; 
+  margin: 0 auto;
 }
 // sidebar
 .sidebar {
+  box-sizing: border-box;
+  &__toggle-button {
+    display: none;
+  }
+  .logo {
+    margin-bottom: 20px;
+    &__icon {
+    font-size: 2rem;
+    color: #51586a;
+  }
+  }
+  &__collapse {
+    margin-right: 40px;
     box-sizing: border-box;
-    &__toggle-button {
-        display: none;
+  }
+  .search {
+    position: relative;
+    margin-bottom: 2rem;
+    &__input {
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      font-size: .9rem;
+      line-height: 1.5;
+      padding: 0.375rem 0.75rem;
+      background-color: #434857;
+      background-clip: padding-box;
+      border: 1px solid #434857;
+      border-radius: 0.25rem;
+      transition: all .3s;
+      &:focus {
+        color: #495057;
+        background-color: #fff;
+        border-color: #71cced;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(25, 151, 198, 0.25);
+      }
     }
-    .logo {
-        margin-bottom: 20px;
-        &__icon {
-        font-size: 2rem;
-        color: #51586a;
-        }
+    &__btn {
+      position: absolute;
+      background-color: transparent;
+      border: 0;
+      top: 25%;
+      right: 3%;
+      cursor: pointer;
+      i {
+        font-size: 85%;
+        color: #9198aa;
+      }
     }
-    &__collapse {
-        margin-right: 40px;
-        box-sizing: border-box;
-    }
-    .search {
-        position: relative;
-        margin-bottom: 2rem;
-        &__input {
-            display: block;
-            box-sizing: border-box;
-            width: 100%;
-            font-size: .9rem;
-            line-height: 1.5;
-            padding: 0.375rem 0.75rem;
-            background-color: #434857;
-            background-clip: padding-box;
-            border: 1px solid #434857;
-            border-radius: 0.25rem;
-            transition: all .3s;
-            &:focus {
-                color: #495057;
-                background-color: #fff;
-                border-color: #71cced;
-                outline: 0;
-                box-shadow: 0 0 0 0.2rem rgba(25, 151, 198, 0.25);
-            }
-        }
-        &__btn {
-            position: absolute;
-            background-color: transparent;
-            border: 0;
-            top: 25%;
-            right: 3%;
-            cursor: pointer;
-            i {
-                font-size: 85%;
-                color: #9198aa;
-            }
-        }
-    }
+  }
 }
 // navbar
 .dashboards {
-    $self : &;
-    margin-bottom: 1.2rem;
-    &__title {
-        padding-left: 15px;
-        padding-right: 15px;
-        margin-bottom: 5px;
-        font-size: 85%;
-        font-weight: normal;
-        letter-spacing: 1px;
-        color: #51586a;
-        text-transform: uppercase;
+  $self : &;
+  margin-bottom: 1.2rem;
+  &__title {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 5px;
+    font-size: 85%;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: #51586a;
+    text-transform: uppercase;
+  }
+  &__item {
+    #{$self}__link {
+      display: block;
+      padding: 0.5rem 1rem;
+      border-radius: .25rem;
+      color: $grey-text;
+      transition: all .3s;
+      &.active {
+        color: #fff;
+        background-color: #1997c6;
+      }
+      &:hover {
+        color: #fff;
+      }
     }
-    &__item {
-        #{$self}__link {
-        display: block;
-        padding: 0.5rem 1rem;
-        border-radius: .25rem;
-        color: $grey-text;
-        transition: all .3s;
-        &.active {
-            color: #fff;
-            background-color: #1997c6;
-        }
-        &:hover {
-            color: #fff;
-        }
-    }
-    }
+  }
 }
 .more-document {
-    $self : &;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #51586a;
-    &__title {
-        padding-left: 15px;
-        padding-right: 15px;
-        margin-bottom: 5px;
-        font-size: 85%;
-        font-weight: normal;
-        letter-spacing: 1px;
-        color: #51586a;
-        text-transform: uppercase;
+  $self : &;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #51586a;
+  &__title {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 5px;
+    font-size: 85%;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: #51586a;
+    text-transform: uppercase;
+  }
+  &__item {
+    #{$self}__link {
+      display: block;
+      padding: 0.5rem 1rem;
+      border-radius: .25rem;
+      color: $grey-text;
+      &.active {
+        color: #fff;
+        background-color: #1997c6;
+      }
+      &:hover {
+        color: #fff;
+      }
     }
-    &__item {
-        #{$self}__link {
-        display: block;
-        padding: 0.5rem 1rem;
-        border-radius: .25rem;
-        color: $grey-text;
-        &.active {
-            color: #fff;
-            background-color: #1997c6;
-        }
-        &:hover {
-            color: #fff;
-        }
-    }
-    }
+  }
 }
 // main content
 .overview {
-    &__header {
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: 1.2rem; 
-        border-bottom: 1px solid $dark-grey;
-    }
-    &__sub-title {
-        margin-top: 0;
-        margin-bottom: 5px;
-        font-weight: normal;
-        font-size: 85%;
-        color: $dark-grey;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
-    &__main-title {
-        font-size: 2rem;
-        color: #fff;
-    }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.2rem; 
+    border-bottom: 1px solid $dark-grey;
+  }
+  &__sub-title {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-size: 85%;
+    color: $dark-grey;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  &__main-title {
+    font-size: 2rem;
+    color: #fff;
+  }
 }
 .datetime-picker {
+  position: relative;
+  &__input {
+    box-sizing: border-box;
+    color: #fff;
+    padding: 0.375rem 0;
+    padding-left: 2rem;
+    font-size: .9rem;
+    line-height: 1.5;
+    background-color: #434857;
+    background-clip: padding-box;
+    border: 1px solid #434857;
+    border-radius: 0.25rem;
+    transition: all .3s;
+    &:focus {
+      color: #495057;
+      background-color: #fff;
+      border-color: #71cced;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(25, 151, 198, 0.25);
+    }
+    &::placeholder {
+      color: #fff;
+    }
+  }
+  &__icon {
+    position: absolute;
+    top: 14%;
+    left: 6%;
+  }
+}
+// doughnut chart
+.doughnut {
+  text-align: center;
+  &__chart {
+    margin-bottom: 1rem;
+    display: block;
+    width: 252px;
+    height: 252px;
+  }
+  &__content {
+    color: #999;
+  }
+  &__title {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: white;
+  }
+}
+.overview__charts {
+  margin-top: 3rem;
+}
+.doughnut {
+  text-align: center;
+  &__chart {
+    margin-bottom: 1rem;
+    display: block;
+    width: 252px;
+    height: 252px;
+  }
+  &__content {
+    color: #999;
+  }
+  &__title {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: white;
+  }
+}
+.quick-stats {
+  padding-bottom: 3rem;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  &__header {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
     position: relative;
-    &__input {
-        box-sizing: border-box;
-        color: #fff;
-        padding: 0.375rem 0;
-        padding-left: 2rem;
-        font-size: .9rem;
-        line-height: 1.5;
-        background-color: #434857;
-        background-clip: padding-box;
-        border: 1px solid #434857;
-        border-radius: 0.25rem;
-        transition: all .3s;
-        &:focus {
-            color: #495057;
-            background-color: #fff;
-            border-color: #71cced;
-            outline: 0;
-            box-shadow: 0 0 0 0.2rem rgba(25, 151, 198, 0.25);
-        }
-        &::placeholder {
-            color: #fff;
-        }
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    &::before {
+      position: absolute;
+      top: 50%;
+      display: block;
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: #6f7890;
     }
-    &__icon {
+  }
+  &__title {
+    position: relative;
+    display: inline-block;
+    padding: 0 1em;
+    color: #6f7890;
+    vertical-align: middle;
+    background-color: #252830;
+    margin: 0;
+    font-size: 100%;
+    color: inherit;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+  &__charts {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0 -10px;
+  }
+}
+.line-chart {
+  flex: 0 0 25%;
+  max-width: 25%;
+  margin: 0 8px;
+  box-sizing: border-box;
+  flex: 1;
+  border-radius: 4px;
+  &--green {
+    background-color: #1BC98E;
+  }
+  &--red {
+    background-color: #E64759;
+  }
+  &--violet {
+    background-color: #9F86FF;
+  }
+  &--yellow {
+    background-color: #E4D836;
+  }
+  &__content {
+    padding: 1rem;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    margin-bottom: 1rem;
+  }
+  &__title {
+    font-size: 85%;
+    letter-spacing: .15em;
+    color: #828a9f;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.65);
+  }
+  &__count {
+    font-size: 2rem;
+    color: #fff;
+  }
+  &__percent {
+    display: inline-block;
+    padding: .4em;
+    font-size: 12px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    margin-left: .4rem; 
+    &--increase {
+      position: relative;
+      &::before {
+        content: "";
         position: absolute;
-        top: 14%;
-        left: 6%;
+        border-style: solid;
+        border-width: 3.5px;
+        right: -6px;
+        top: 9px;
+        border-color: transparent transparent #fff;
+      }
     }
+    &--decrease {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        border-style: solid;
+        border-width: 3.5px;
+        right: -6px;
+        top: 12px;
+        border-color: #fff transparent transparent;
+      }
+    }
+  }
+  &__chart {
+    width: 186px;
+    height: 46px!important;
+  }
+}
+.statistical {
+  display: flex;
+  $self : &;
+  margin: 0 -10px;
+  &__table {
+    max-width: 48%;
+    flex: 1;
+    margin-bottom: 3rem;
+    padding: 0 10px;
+  }
+  &__list {
+    border: 1px solid #434857;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+  &__title {
+    padding: 0.75rem 1.25rem;
+    font-weight: 600;
+    color:  #fff;
+    font-size: 1rem;
+    border-bottom: 1px solid #434857;
+  }
+  &__link {
+    font-size: .9rem;
+    padding: .8rem 1.25rem;
+    border-bottom: 1px solid #434857;
+    color: #cfd2da;
+    display: flex;
+    justify-content: space-between;
+    transition: all .3s;
+    &:hover {
+      color: #cfd2da;
+      z-index: 1;
+      background-color: #434857;
+    }
+    &:active {
+      #{$self}__country {
+        color: #1e2127;
+      }
+      background-color: #fff;
+      }
+    }
+    &__all-link {
+      display: inline-block;
+      padding: 0.375rem 0.75rem;
+      color: #1997c6;
+      background-color: transparent;
+      border: 1px solid #1997c6;
+      border-radius: 4px;
+      transition: all .5s;
+      &:hover {
+        color: #fff;
+        background-color: #1997c6;
+      }
+  }
+}
+.statistical__table{
+  &.statistical__table--country {
+    .statistical__link {
+      font-size: .9rem;
+      border-bottom: 1px solid #434857;
+      color: #cfd2da;
+      display: flex;
+      justify-content: space-between;
+      transition: all .3s;
+      padding: 0;
+      &:hover {
+        color: #cfd2da;
+        z-index: 1;
+        background-color: #434857;
+      }
+      &:active {
+        .statistical__country {
+          color: #1e2127;
+        }
+        background-color: #fff;
+      }
+    }
+    .statistical__country {
+      padding: .8rem 1.25rem;
+      z-index: 5;
+      background-color: #1e2127;
+      white-space: nowrap;
+    }
+    .statistical__percent {
+      padding: .8rem 1.25rem;
+    }
+  }
+ }
+.statistical__table--full {
+  width: 100%;
 }
